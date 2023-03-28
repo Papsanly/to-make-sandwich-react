@@ -52,7 +52,11 @@ export default function TodoItem(
   }
 ) {
   return (
-    <li id={id} className={style.todoItem} onClick={editValue === null  ? onClick : null}>
+    <motion.li
+      id={id}
+      className={style.todoItem}
+      onClick={editValue === null  ? onClick : null}
+    >
       {editValue === null ?
         <>
           <TodoData {...{text, date, done}}/>
@@ -77,6 +81,6 @@ export default function TodoItem(
           />
         </>
       }
-    </li>
+    </motion.li>
   )
 }

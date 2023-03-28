@@ -2,5 +2,10 @@
   height: 20px;
   background: rgb(190, 178, 234);
   margin-bottom: 20px;
-  transition: width .2s, background .2s;
+  transition: width .2s, background .2s, border-radius .2s;
+  border-radius: 0 5px 5px 0;
+}
+
+.progressBar[data-progress='1'] {
+  border-radius: 0;
 }
