@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #a091ce;
+}
+
+button, input {
+  font: inherit;
+}
+
+*:focus {
+  outline-color: #d074d7;
+}
+
+.app {
+  font-family: Nunito, sans-serif;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}

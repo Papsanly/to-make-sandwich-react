@@ -1,0 +1,63 @@
+.todoItem {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background: #d8cef1;
+  padding: 12px 20px 12px 30px;
+  transition: background .2s;
+  align-items: center;
+  user-select: none;
+}
+
+.todoItem:hover {
+  background: #d5a3de;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.date {
+  font-size: 11px;
+  color: gray;
+  margin-left: 4px;
+}
+
+.edit, .delete {
+  border: none;
+  padding: 5px 7px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit {
+  background: #d074d7;
+  border-radius: 5px 0 0 5px;
+}
+
+.delete {
+  position: relative;
+  background: #7e74d7;
+  z-index: 1;
+  transition: border-radius .2s;
+}
+
+.delete[data-done=true] {
+  border-radius: 5px;
+}
+
+.delete[data-done=false] {
+  border-radius: 0 5px 5px 0;
+}
+
+.editInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #f1eeff;
+  border-radius: 7px;
+  font-size: 19px;
+  margin-right: 10px;
+}
