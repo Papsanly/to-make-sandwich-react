@@ -58,11 +58,11 @@
   transition: border-radius .2s;
 }
 
-.delete[data-done=true] {
+.todoButtons[data-show-first=false] .delete {
   border-radius: 5px;
 }
 
-.delete[data-done=false] {
+.todoButtons[data-show-first=true] .delete {
   border-radius: 0 5px 5px 0;
 }
 

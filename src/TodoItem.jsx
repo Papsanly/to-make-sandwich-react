@@ -1,24 +1,27 @@
 import style from './TodoItem.module.css'
-import {motion} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 
 function TodoButtons({id, text1, text2, showFirst=true, onClick1, onClick2}) {
   return (
-    <div className={style.todoButtons}>
-      <motion.button
-        id={id}
-        initial={{x: '100%'}}
-        animate={{x: showFirst ? 0 : '100%'}}
-        exit={{x: '100%'}}
-        transition={{duration: 0.2, ease: 'backInOut'}}
-        className={style.edit}
-        onClick={onClick1}
-      >
-        {text1}
-      </motion.button>
+    <div className={style.todoButtons} data-show-first={showFirst}>
+      <AnimatePresence>
+        {showFirst &&
+          <motion.button
+            id={id}
+            initial={{x: '100%'}}
+            animate={{x: showFirst ? 0 : '100%'}}
+            exit={{x: '100%'}}
+            transition={{duration: 0.2, ease: 'backInOut'}}
+            className={style.edit}
+            onClick={onClick1}
+          >
+            {text1}
+          </motion.button>
+        }
+      </AnimatePresence>
       <button
         id={id}
         className={style.delete}
-        data-done={!showFirst}
         onClick={onClick2}
       >
         {text2}
