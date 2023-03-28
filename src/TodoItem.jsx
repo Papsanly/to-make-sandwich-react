@@ -1,24 +1,20 @@
 import style from './TodoItem.module.css'
-import {AnimatePresence, motion} from 'framer-motion'
+import {motion} from 'framer-motion'
 
 function TodoButtons({id, text1, text2, showFirst=true, onClick1, onClick2}) {
   return (
-    <div>
-      <AnimatePresence>
-        {showFirst &&
-          <motion.button
-            id={id}
-            initial={{x: '100%'}}
-            animate={{x: 0}}
-            exit={{x: '100%'}}
-            transition={{type: 'tween', duration: 0.2}}
-            className={style.edit}
-            onClick={onClick1}
-          >
-            {text1}
-          </motion.button>
-        }
-      </AnimatePresence>
+    <div className={style.todoButtons}>
+      <motion.button
+        id={id}
+        initial={{x: '100%'}}
+        animate={{x: showFirst ? 0 : '100%'}}
+        exit={{x: '100%'}}
+        transition={{duration: 0.2, ease: 'backInOut'}}
+        className={style.edit}
+        onClick={onClick1}
+      >
+        {text1}
+      </motion.button>
       <button
         id={id}
         className={style.delete}
@@ -33,7 +29,7 @@ function TodoButtons({id, text1, text2, showFirst=true, onClick1, onClick2}) {
 
 function TodoData({text, date, done}) {
   return (
-    <div style={{pointerEvents: "none"}}>
+    <div className={style.todoData}>
       <span
         className={style.text}
         style={{textDecoration: done ? "line-through" : "none"}}

@@ -7,20 +7,32 @@
   transition: background .2s;
   align-items: center;
   user-select: none;
+  width: 100%;
 }
 
 .todoItem:hover {
   background: #d5a3de;
 }
 
+.todoButtons {
+  display: flex;
+  margin-left: 10px;
+}
+
+.todoData {
+  pointer-events: none;
+}
+
 .text {
   font-size: 18px;
+  word-break: break-word;
+  margin-right: 4px;
 }
 
 .date {
   font-size: 11px;
   color: gray;
-  margin-left: 4px;
+  white-space: nowrap;
 }
 
 .edit, .delete {
@@ -34,6 +46,8 @@
 
 .edit {
   background: #d074d7;
+  padding-right: 12px;
+  margin-right: -5px;
   border-radius: 5px 0 0 5px;
 }
 
