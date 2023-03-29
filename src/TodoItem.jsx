@@ -74,7 +74,12 @@ export default function TodoItem(
         </>
         :
         <>
-          <input id={id} value={editValue} onChange={onEditInputChange} className={style.editInput}/>
+          <input
+            id={id}
+            value={editValue}
+            onChange={onEditInputChange}
+            className={style.editInput}
+          />
           <TodoButtons
             id={id}
             text1={'Save'}
