@@ -4,7 +4,7 @@ import ToMakeSandwich from './ToMakeSandwich'
 export default function App() {
   return (
     <div className={style.app}>
-      <ToMakeSandwich/>
+      <ToMakeSandwich />
     </div>
   )
 }
