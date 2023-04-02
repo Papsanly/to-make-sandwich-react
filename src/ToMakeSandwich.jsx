@@ -15,7 +15,7 @@ export default function ToMakeSandwich() {
   }, [todos])
 
   const appendTodos = () => {
-    setTodos((todos) => [
+    setTodos(todos => [
       ...todos,
       {
         id: nanoid(),
@@ -34,36 +34,36 @@ export default function ToMakeSandwich() {
     setInputValue('')
   }
 
-  const handleInputKeyUp = (e) => {
+  const handleInputKeyUp = e => {
     if (e.key === 'Enter') {
       handleButtonClick()
     }
   }
 
-  const toggleDone = (e) => {
-    setTodos((todos) =>
-      todos.map((todo) =>
+  const toggleDone = e => {
+    setTodos(todos =>
+      todos.map(todo =>
         todo.id === e.target.id ? { ...todo, done: !todo.done } : todo
       )
     )
   }
 
-  const deleteTodo = (e) => {
-    setTodos((todos) => todos.filter((todo) => todo.id !== e.target.id))
+  const deleteTodo = e => {
+    setTodos(todos => todos.filter(todo => todo.id !== e.target.id))
   }
 
-  const editTodo = (e) => {
+  const editTodo = e => {
     e.stopPropagation()
-    setTodos((todos) =>
-      todos.map((todo) =>
+    setTodos(todos =>
+      todos.map(todo =>
         todo.id === e.target.id ? { ...todo, editValue: todo.text } : todo
       )
     )
   }
 
-  const saveEditedTodo = (e) => {
-    setTodos((todos) =>
-      todos.map((todo) =>
+  const saveEditedTodo = e => {
+    setTodos(todos =>
+      todos.map(todo =>
         todo.id === e.target.id
           ? {
               ...todo,
@@ -77,23 +77,23 @@ export default function ToMakeSandwich() {
     )
   }
 
-  const cancelEditedTodo = (e) => {
-    setTodos((todos) =>
-      todos.map((todo) =>
+  const cancelEditedTodo = e => {
+    setTodos(todos =>
+      todos.map(todo =>
         todo.id === e.target.id ? { ...todo, editValue: null } : todo
       )
     )
   }
 
-  const changeTodoEditValue = (e) => {
-    setTodos((todos) =>
-      todos.map((todo) =>
+  const changeTodoEditValue = e => {
+    setTodos(todos =>
+      todos.map(todo =>
         todo.id === e.target.id ? { ...todo, editValue: e.target.value } : todo
       )
     )
   }
 
-  const todoElements = todos.map((item) => (
+  const todoElements = todos.map(item => (
     <TodoItem
       key={item.id}
       {...item}
@@ -106,7 +106,7 @@ export default function ToMakeSandwich() {
     />
   ))
 
-  const progress = todos.filter((todo) => todo.done).length / todos.length || 0
+  const progress = todos.filter(todo => todo.done).length / todos.length || 0
 
   return (
     <div className={style.toMakeSandwich}>
@@ -117,7 +117,7 @@ export default function ToMakeSandwich() {
         <input
           placeholder={'What do u want to do?'}
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={e => setInputValue(e.target.value)}
           onKeyUp={handleInputKeyUp}
         />
         <button onClick={handleButtonClick}>Add</button>
