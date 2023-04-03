@@ -8,10 +8,15 @@ export default function ProgressBar({ progress }) {
   )
 
   return (
-    <div
-      data-progress={progress}
-      className={style.progressBar}
-      style={{ width: `${100 * progress}%`, background: `rgb(${RGBArray})` }}
-    />
+    <div className={style.progressBarBackground}>
+      <div
+        data-progress={progress}
+        className={style.progressBar}
+        style={{
+          width: `calc(${100 * progress}% - 10px)`,
+          background: `rgb(${RGBArray})`
+        }}
+      />
+    </div>
   )
 }

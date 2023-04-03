@@ -1,0 +1,45 @@
+.inputSection {
+  display: flex;
+  padding: 20px;
+  background: white;
+  border-radius: 10px 10px 20px 20px;
+}
+
+.inputSection input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #f1eeff;
+  border-radius: 7px;
+  font-size: 19px;
+  color: #36395a;
+}
+
+.inputSection input::placeholder {
+  color: #8282ba;
+}
+
+.inputSection button {
+  border: none;
+  background: #fcfcfd;
+  border-radius: 4px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  color: #36395A;
+  cursor: pointer;
+  font-family: Russo One, sans-serif;
+  padding: 0 1rem;
+  height: 50px;
+  transition: box-shadow .15s, transform .15s;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.inputSection button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.inputSection button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}

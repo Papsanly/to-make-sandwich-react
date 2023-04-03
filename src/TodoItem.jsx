@@ -7,7 +7,7 @@ function TodoButtons({
   text2,
   showFirst = true,
   onClick1,
-  onClick2,
+  onClick2
 }) {
   return (
     <div className={style.todoButtons} data-show-first={showFirst}>
@@ -58,7 +58,7 @@ export default function TodoItem({
   onEditButtonClick,
   onSaveButtonClick,
   onCancelButtonClick,
-  onEditInputChange,
+  onEditInputChange
 }) {
   return (
     <motion.li

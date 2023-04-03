@@ -3,6 +3,13 @@ import ProgressBar from './ProgressBar'
 import TodoItem from './TodoItem'
 import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
+import InputSection from './InputSection'
+
+// TODO:
+//   1. Add "set deadline" button
+//   2. It starts white and if you don't use it, the time doesn't show
+//   3. It turns blue (or whatever color) and the date is added
+//   4. If deadline is reached it turns red (or something like that)
 
 export default function ToMakeSandwich() {
   const [todos, setTodos] = useState(
@@ -22,12 +29,12 @@ export default function ToMakeSandwich() {
         text: inputValue,
         date: Date.now(),
         done: false,
-        editValue: null,
-      },
+        editValue: null
+      }
     ])
   }
 
-  const handleButtonClick = () => {
+  const handleAddButtonClick = () => {
     if (inputValue.trim().length !== 0) {
       appendTodos()
     }
@@ -36,7 +43,7 @@ export default function ToMakeSandwich() {
 
   const handleInputKeyUp = e => {
     if (e.key === 'Enter') {
-      handleButtonClick()
+      handleAddButtonClick()
     }
   }
 
@@ -70,7 +77,7 @@ export default function ToMakeSandwich() {
               text:
                 todo.editValue.trim().length === 0 ? todo.text : todo.editValue,
               editValue:
-                todo.editValue.trim().length === 0 ? todo.editValue : null,
+                todo.editValue.trim().length === 0 ? todo.editValue : null
             }
           : todo
       )
@@ -112,16 +119,13 @@ export default function ToMakeSandwich() {
     <div className={style.toMakeSandwich}>
       <h1 className={style.title}>My To-Do-List</h1>
       <ProgressBar progress={progress} />
-      <ul>{todoElements}</ul>
-      <div className={style.inputSection}>
-        <input
-          placeholder={'What do u want to do?'}
-          value={inputValue}
-          onChange={e => setInputValue(e.target.value)}
-          onKeyUp={handleInputKeyUp}
-        />
-        <button onClick={handleButtonClick}>Add</button>
-      </div>
+      <ul className={style.todoList}>{todoElements}</ul>
+      <InputSection
+        onInputChange={e => setInputValue(e.target.value)}
+        onInputKeyUp={handleInputKeyUp}
+        onAddButtonClick={handleAddButtonClick}
+        inputValue={inputValue}
+      />
     </div>
   )
 }

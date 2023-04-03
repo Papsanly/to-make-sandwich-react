@@ -8,6 +8,7 @@
   align-items: center;
   user-select: none;
   width: 100%;
+  color: #36395a;
 }
 
 .todoItem:hover {
@@ -31,7 +32,7 @@
 
 .date {
   font-size: 11px;
-  color: gray;
+  color: #8282ba;
   white-space: nowrap;
 }
 
