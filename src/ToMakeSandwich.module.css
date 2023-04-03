@@ -13,6 +13,10 @@
   margin-bottom: 20px;
 }
 
+.todoList[data-empty=true] {
+  margin-bottom: 0;
+}
+
 .title {
   color: #36395a;
   font-family: Russo One, sans-serif;

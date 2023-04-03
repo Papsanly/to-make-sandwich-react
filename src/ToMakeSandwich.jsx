@@ -119,7 +119,9 @@ export default function ToMakeSandwich() {
     <div className={style.toMakeSandwich}>
       <h1 className={style.title}>My To-Do-Sandwich</h1>
       <ProgressBar progress={progress} />
-      <ul className={style.todoList}>{todoElements}</ul>
+      <ul data-empty={todos.length === 0} className={style.todoList}>
+        {todoElements}
+      </ul>
       <InputSection
         onInputChange={e => setInputValue(e.target.value)}
         onInputKeyUp={handleInputKeyUp}
