@@ -48,12 +48,20 @@
   transform: translateY(2px);
 }
 
-::-webkit-calendar-picker-indicator {
+.deadlineInput::-webkit-calendar-picker-indicator {
   scale: 1.5;
   background-image: url("./assets/calendar-event-fill.svg");
   color: #36395A;
 }
 
-::-webkit-datetime-edit-text {
+.deadlineInput::-webkit-datetime-edit-text {
   color: #d074d7;
+}
+
+.deadlineInput[data-deadline=false] {
+  width: 50px;
+}
+
+.deadlineInput[data-deadline=false]::-webkit-datetime-edit-fields-wrapper {
+  display: none;
 }
