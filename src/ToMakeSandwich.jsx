@@ -41,9 +41,7 @@ export default function ToMakeSandwich() {
   }
 
   const handleInputKeyUp = e => {
-    if (e.key === 'Enter') {
-      handleAddButtonClick()
-    }
+    if (e.key === 'Enter') handleAddButtonClick()
   }
 
   const toggleDone = e => {

@@ -1,7 +1,7 @@
 .toMakeSandwich {
   display: flex;
   flex-direction: column;
-  min-width: 400px;
+  min-width: 580px;
   max-width: 1000px;
   width: 100%;
   margin: 28px;
