@@ -117,7 +117,7 @@ export default function ToMakeSandwich() {
 
   return (
     <div className={style.toMakeSandwich}>
-      <h1 className={style.title}>My To-Do-List</h1>
+      <h1 className={style.title}>My To-Do-Sandwich</h1>
       <ProgressBar progress={progress} />
       <ul className={style.todoList}>{todoElements}</ul>
       <InputSection
