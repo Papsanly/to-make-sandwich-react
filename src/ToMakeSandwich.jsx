@@ -28,7 +28,7 @@ export default function ToMakeSandwich() {
       {
         id: nanoid(),
         text: inputValue,
-        date: deadlineValue,
+        date: deadlineValue !== '' ? new Date(deadlineValue).getTime() : null,
         done: false,
         editValue: null
       }
@@ -38,6 +38,7 @@ export default function ToMakeSandwich() {
   const handleAddButtonClick = () => {
     if (inputValue.trim().length !== 0) appendTodos()
     setInputValue('')
+    setDeadlineValue('')
   }
 
   const handleInputKeyUp = e => {
