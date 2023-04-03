@@ -43,7 +43,7 @@ function TodoData({ text, date, done }) {
         {text}
       </span>
       {date !== null && (
-        <span className={style.date}>
+        <span data-deadline-reached={date < Date.now() && !done} className={style.date}>
           {new Date(date).toLocaleString().slice(0, -3)}
         </span>
       )}

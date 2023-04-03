@@ -5,12 +5,6 @@ import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import InputSection from './InputSection'
 
-// TODO:
-//   1. Add "set deadline" button (done)
-//   2. It starts white and if you don't use it, the time doesn't show (done)
-//   3. It turns blue (or whatever color) and the date is added (done)
-//   4. If deadline is reached it turns red (or something like that)
-
 export default function ToMakeSandwich() {
   const [todos, setTodos] = useState(
     JSON.parse(localStorage.getItem('todos')) || []
