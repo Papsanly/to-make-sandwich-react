@@ -16,6 +16,7 @@ export default function ToMakeSandwich() {
     JSON.parse(localStorage.getItem('todos')) || []
   )
   const [inputValue, setInputValue] = useState('')
+  const [deadlineValue, setDeadlineValue] = useState('')
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
@@ -27,7 +28,7 @@ export default function ToMakeSandwich() {
       {
         id: nanoid(),
         text: inputValue,
-        date: Date.now(),
+        date: deadlineValue,
         done: false,
         editValue: null
       }
@@ -124,9 +125,11 @@ export default function ToMakeSandwich() {
       </ul>
       <InputSection
         onInputChange={e => setInputValue(e.target.value)}
+        onDeadlineChange={e => setDeadlineValue(e.target.value)}
         onInputKeyUp={handleInputKeyUp}
         onAddButtonClick={handleAddButtonClick}
         inputValue={inputValue}
+        deadlineValue={deadlineValue}
       />
     </div>
   )

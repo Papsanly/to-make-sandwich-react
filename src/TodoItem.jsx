@@ -42,7 +42,11 @@ function TodoData({ text, date, done }) {
       >
         {text}
       </span>
-      <span className={style.date}>{new Date(date).toLocaleString()}</span>
+      {date !== '' && (
+        <span className={style.date}>
+          {new Date(date).toLocaleString().slice(0, -3)}
+        </span>
+      )}
     </div>
   )
 }

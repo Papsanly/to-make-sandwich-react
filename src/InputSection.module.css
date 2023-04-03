@@ -5,7 +5,7 @@
   border-radius: 10px 10px 20px 20px;
 }
 
-.inputSection input {
+.textInput {
   flex: 1;
   padding: 10px;
   border: none;
@@ -15,11 +15,11 @@
   color: #36395a;
 }
 
-.inputSection input::placeholder {
+.textInput::placeholder {
   color: #8282ba;
 }
 
-.inputSection button {
+.inputSection button, .deadlineInput {
   border: none;
   background: #fcfcfd;
   border-radius: 4px;
@@ -32,14 +32,28 @@
   transition: box-shadow .15s, transform .15s;
   font-size: 15px;
   margin-left: 10px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.inputSection button:hover {
+.inputSection button:hover, .deadlineInput:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-.inputSection button:active {
+.inputSection button:active, .deadlineInput:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+::-webkit-calendar-picker-indicator {
+  scale: 1.5;
+  background-image: url("./assets/calendar-event-fill.svg");
+  color: #36395A;
+}
+
+::-webkit-datetime-edit-text {
+  color: #d074d7;
 }
