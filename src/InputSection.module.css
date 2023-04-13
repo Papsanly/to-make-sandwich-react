@@ -59,9 +59,13 @@
 }
 
 .deadlineInput[data-deadline=false] {
-  width: 50px;
+  width: 52px;
 }
 
 .deadlineInput[data-deadline=false]::-webkit-datetime-edit-fields-wrapper {
   display: none;
+}
+
+.deadlineInput {
+  justify-content: flex-end;
 }
